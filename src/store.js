@@ -42,9 +42,11 @@ class Store {
    * Добавление новой записи
    */
   addItem() {
+    const lastItem = this.state.list[this.state.list.length - 1];
+
     this.setState({
       ...this.state,
-      list: [...this.state.list, {code: this.state.list.length + 1, title: 'Новая запись'}]
+      list: [...this.state.list, {code: lastItem.code + 1, title: 'Новая запись'}]
     })
   };
 
